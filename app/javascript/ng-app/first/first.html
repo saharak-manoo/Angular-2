@@ -66,13 +66,15 @@
 
 <input type="checkbox" (change)="checkbox1Change($event.target.checked)">
 
-<h3>{{ select1 }}</h3>
+<h3>โปรดเลือก {{ select1 }}</h3>
 <select id="select-1" [(ngModel)]="select1" (change)="select1Change($event.target.value)">
-  <option value="01">01</option>
-  <option value="02">02</option>
-  <option value="03">03</option>
-  <option value="04">04</option>
+  <option value="มกราคม">มกราคา</option>
+  <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+  <option value="มีนาคม">มีนาคม</option>
+  <option value="เมษษยน">เมษายน</option>
 </select>
+
+
 
 
 
@@ -87,8 +89,19 @@
 <input type="checkbox" [(ngModel)]="checkbox2"> If Else
 <div *ngIf="checkbox2; else elseBlockId"><h3>If Condition!!</h3></div>
 <ng-template #elseBlockId><h3>Else Condition!!</h3></ng-template>
+------------------------------------
+<input type="number" [(ngModel)]="one">
+<input type="number" [(ngModel)]="two">
 
+<h3>บวกเลข : {{ one+two  }}</h3>
 
+<div *ngIf="onetwo(one,two)==10; else elseBlockP"><h3>If Condition!!</h3></div>
+<ng-template #elseBlockP><h3>Else Condition!!</h3></ng-template>
+
+<!-- <div *ngIf="(one+two)==10; else elseBlockP"><h3>If Condition!!</h3></div>
+<ng-template #elseBlockP><h3>Else Condition!!</h3></ng-template> -->
+
+<!-- <div *ngIf="(one+two)==10"<h3>If Condition!!</h3></div> -->
 <h2>5. For Loop</h2>
 <h3>One dimension for loop</h3>
 <div *ngFor="let text1 of text1s">

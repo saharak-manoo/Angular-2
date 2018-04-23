@@ -14,6 +14,10 @@ export class FirstComponent {
   private b02: number;
   private b03: number;
 
+  private one: number;
+  private two: number;
+  private sum: number;
+
   private c01
   private c02
   private c03
@@ -45,7 +49,7 @@ export class FirstComponent {
     this.d02 = 6
     this.d03 = 7
 
-    this.select1 = "02"
+    this.select1 = "มกราคม"
 
     this.text1s = ["Banana", "Papaya", "Panama"]
     this.text2ss = [["a01","a02","a03"],["b01","b02","b03"]]
@@ -71,7 +75,7 @@ export class FirstComponent {
 
 
   select1Change(value) {
-    alert(value)
+    alert("เดือนที่คุณเลือกคือ :"+value)
   }
 
   input1Change(value) {
@@ -80,5 +84,10 @@ export class FirstComponent {
 
   checkbox1Change(value) {
     alert(value)
+  }
+
+  onetwo(one,two) {
+    return this.sum = one+two;
+    
   }
 }
