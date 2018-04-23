@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import templateString from './second.html';
 import { MyDataService } from '../my_data/my_data.service';
-import { MyData2Service } from '../my_data/my_data.service2';
+import { MyData2Service } from '../my_data/my_data2.service';
 import { MyData } from '../my_data/my_data';
 
 @Component({
@@ -13,7 +13,7 @@ export class SecondComponent {
   private attrs: any
   private newMyData: MyData;
 
-  constructor(private myDataService: MyDataService) { }
+  constructor(private myDataService: MyDataService, private myData2Service: MyData2Service) { }
 
   ngOnInit() {
     this.getAll();
@@ -21,7 +21,7 @@ export class SecondComponent {
   }
 
   getAll() {
-    this.myDataService.all().subscribe(resp => {
+    this.myData2Service.all().subscribe(resp => {
       console.log(resp);
       this.myDatas = resp;
     }, e => {
