@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import templateString from './second.html';
 import { MyDataService } from '../my_data/my_data.service';
+import { MyData2Service } from '../my_data/my_data.service2';
 import { MyData } from '../my_data/my_data';
 
 @Component({
   template: templateString,
-  providers: [ MyDataService ]
+  providers: [ MyDataService, MyData2Service ]
 })
 export class SecondComponent {
   private myDatas: any;
