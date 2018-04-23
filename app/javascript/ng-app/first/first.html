@@ -89,14 +89,15 @@
 <input type="checkbox" [(ngModel)]="checkbox2"> If Else
 <div *ngIf="checkbox2; else elseBlockId"><h3>If Condition!!</h3></div>
 <ng-template #elseBlockId><h3>Else Condition!!</h3></ng-template>
-------------------------------------
-<input type="number" [(ngModel)]="one">
-<input type="number" [(ngModel)]="two">
 
-<h3>บวกเลข : {{ one+two  }}</h3>
+<input type="text" [(ngModel)]="one">
+<input type="text" [(ngModel)]="two">
 
-<div *ngIf="onetwo(one,two)==10; else elseBlockP"><h3>If Condition!!</h3></div>
+<h3>บวกเลข : {{ onetwo(one,two) }}</h3>
+
+<div *ngIf="onetwo(one,two); else elseBlockP"><h3>If Condition!!</h3></div>
 <ng-template #elseBlockP><h3>Else Condition!!</h3></ng-template>
+
 
 <!-- <div *ngIf="(one+two)==10; else elseBlockP"><h3>If Condition!!</h3></div>
 <ng-template #elseBlockP><h3>Else Condition!!</h3></ng-template> -->
@@ -105,8 +106,21 @@
 <h2>5. For Loop</h2>
 <h3>One dimension for loop</h3>
 <div *ngFor="let text1 of text1s">
-  <div><b>{{ text1 }}</b></div>
+  <div><b>{{ text1.id }}{{ text1.name }}</b></div>
 </div>
+
+
+<!-- <h1>Test</h1>
+
+<div *ngFor="let txt2 of box">
+    <div><b>{{ txt2 }}</b> </div>
+  </div>
+<!-- <h3>Array : {{ box }}</h3> -->
+
+
+<!-- <div *ngFor="let txt1 of txt1s">
+    <div><b>{{ txt1 }}</b> <input type="text" [(ngModel)]="[box]" ></div>
+  </div> --> 
 
 <h3>Two dimension for loop</h3>
 <table id="table-2">

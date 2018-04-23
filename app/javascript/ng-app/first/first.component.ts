@@ -30,6 +30,8 @@ export class FirstComponent {
   private text1s;
   private text2ss;
 
+  private txt1s;
+
   constructor() { }
 
   ngOnInit() {
@@ -51,7 +53,9 @@ export class FirstComponent {
 
     this.select1 = "มกราคม"
 
-    this.text1s = ["Banana", "Papaya", "Panama"]
+    this.txt1s = ["Banana", "Papaya", "Panama","Dove"]
+
+    this.text1s = [{name: "Banana", id: 1}, {name: "Papaya", id: 2}, {name: "Panama", id: 3}]
     this.text2ss = [["a01","a02","a03"],["b01","b02","b03"]]
   }
 
@@ -87,7 +91,11 @@ export class FirstComponent {
   }
 
   onetwo(one,two) {
-    return this.sum = one+two;
     
+  
+    return parseInt(one)+parseInt(two)==10;
+    
+   
+
   }
 }
