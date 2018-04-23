@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import templateString from './first.html';
+import templateString from './first2.html';
 
 @Component({
   template: templateString
 })
-export class FirstComponent {
+export class First2Component {
   private editableText1: string;
 
   private a01: number;

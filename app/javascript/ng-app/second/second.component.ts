@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import templateString from './second.html';
-import { MyDataService } from '../my_data/my_data.service';
+// import { MyDataService } from '../my_data/my_data.service';
+import { MyData2Service } from '../my_data/my_data2.service';
 import { MyData } from '../my_data/my_data';
 
 @Component({
   template: templateString,
-  providers: [ MyDataService ]
+  providers: [ MyData2Service ]
 })
 export class SecondComponent {
   private myDatas: any;
   private attrs: any
   private newMyData: MyData;
 
-  constructor(private myDataService: MyDataService) { }
+  constructor(private myData2Service: MyData2Service) { }
 
   ngOnInit() {
     this.getAll();
@@ -20,7 +21,7 @@ export class SecondComponent {
   }
 
   getAll() {
-    this.myDataService.all().subscribe(resp => {
+    this.myData2Service.all().subscribe(resp => {
       console.log(resp);
       this.myDatas = resp;
     }, e => {
@@ -34,7 +35,7 @@ export class SecondComponent {
       integer_test: integer_test,
       boolean_test: boolean_test
     }
-    this.myDataService.update(id, this.attrs).subscribe(resp => {
+    this.myData2Service.update(id, this.attrs).subscribe(resp => {
       console.log(resp);
       this.myDatas = resp;
     }, e => {
@@ -44,7 +45,7 @@ export class SecondComponent {
 
   create(newMyData) {
     console.log(newMyData.getCreateParam())
-    this.myDataService.create(newMyData.getCreateParam()).subscribe(resp => {
+    this.myData2Service.create(newMyData.getCreateParam()).subscribe(resp => {
       console.log(resp);
       this.myDatas = resp;
       this.newMyData = new MyData();
@@ -52,5 +53,16 @@ export class SecondComponent {
       console.log(e);
     })
   }
+
+  delete(id) {
+ 
+    this.myData2Service.delete(id).subscribe(resp => {
+      console.log(resp);
+      this.myDatas = resp;
+    }, e => {
+      console.log(e);
+    })
+  }
+
 
 }
